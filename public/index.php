@@ -81,13 +81,7 @@ if( ! empty(CUSTOM_ROUTE_FILE) ) {
 
 // Add the default routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
-$router->add('posts', ['controller' => 'Posts', 'action' => 'index']);
 $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
-
-
-// Developping Framework route
-$router->add('development', ['controller' => 'development', 'action' => 'index']);
-$router->add('development', ['controller' => 'development', 'action' => 'validate']);
 
 $router->dispatch($_SERVER["QUERY_STRING"]);
